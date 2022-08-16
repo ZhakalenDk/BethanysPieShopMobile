@@ -12,7 +12,7 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LoginWithStackLayout();
         }
 
         protected override void OnStart()
