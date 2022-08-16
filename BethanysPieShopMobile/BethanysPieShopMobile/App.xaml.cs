@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopMobile.Views;
+using BethanysPieShopMobile.Views.Models;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NavigationPageView());
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()
