@@ -1,5 +1,4 @@
 ﻿using BethanysPieShopMobile.Views;
-using BethanysPieShopMobile.Views.Models;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +11,7 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new LoginWithStackLayout();
+            MainPage = new SettingsView();
         }
 
         protected override void OnStart()

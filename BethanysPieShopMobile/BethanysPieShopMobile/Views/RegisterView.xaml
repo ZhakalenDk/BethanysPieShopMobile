@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.RegisterView"
+             BackgroundImageSource="patternwide.png">
+    <ContentPage.Content>
+        <Grid Margin="5,20,0,5"
+              RowDefinitions="200, 100, 50, 50, 50, 50, *"
+              ColumnDefinitions="4*, 6*">
+            <Image Grid.ColumnSpan="2"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   Source="bethanylogo.png"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand" />
+
+            <Label FontSize="Title"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">REGISTER NOW!</Label>
+
+            <!--User name input-->
+            <Label Grid.Row="2"
+                   FontSize="18"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand">User name</Label>
+            <Entry x:Name="userName"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   FontSize="18"
+                   Placeholder="Enter your user name"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   TextChanged="EnableRegistering"/>
+
+            <!--Password input-->
+            <Label Grid.Row="3"
+                   FontSize="18"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand">Password</Label>
+            <Entry x:Name="password"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   FontSize="18"
+                   IsPassword="True"
+                   Placeholder="Enter your password"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   TextChanged="EnableRegistering"/>
+
+            <!--Birthday input-->
+            <Label Grid.Row="4"
+                   FontSize="18"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand">Birthday</Label>
+            <DatePicker x:Name="dob"
+                        Format="D"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        FontSize="15"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        DateSelected="DateValidator"/>
+
+            <!--Delivery input-->
+            <Label Grid.Row="5"
+                   FontSize="18"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand">Preferred delivery time</Label>
+            <TimePicker x:Name="deliveryTime"
+                        Format="hh:mm:ss tt"
+                        Grid.Row="5" Grid.Column="1"
+                        FontSize="18"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"/>
+
+            <Button x:Name="registerButton"
+                    Grid.Row="6"
+                    IsEnabled="False"
+                    Grid.ColumnSpan="2"
+                    Text="REGISTER NOW"
+                    TextColor="White"
+                    BackgroundColor="#22cfa7"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Clicked="Register"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.ContactView"
+             BackgroundImageSource="patternwide.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Margin="10"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   Source="bethanylogo.png"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start" />
+
+            <Label FontSize="Title"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start">Send us a message</Label>
+
+            <Editor HeightRequest="200"
+                    VerticalOptions="Start"
+                    IsSpellCheckEnabled="True"
+                    IsTextPredictionEnabled="True">
+                <Editor.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                iOS="#32c3ef"
+                                Android="#83d5c2"/>
+                </Editor.BackgroundColor>
+            </Editor>
+
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Start">
+                <Label>Should we contact you?</Label>
+                <Switch/>
+            </StackLayout>
+
+            <Button x:Name="sendButton"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Text="SEND" TextColor="White"
+                    BackgroundColor="#22cfa7"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Clicked="Send"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

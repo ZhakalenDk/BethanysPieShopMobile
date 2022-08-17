@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.PieDetailView"
+             BackgroundImageSource="patternwide.png">
+    <ContentPage.Content>
+        <Grid Margin="5, 0"
+              RowDefinitions="50, 150, 50, 200, 50"
+              ColumnDefinitions="4*, 6*">
+            <Label x:Name="pieName"
+                   FontSize="Title"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   Text="{Binding PieName, Mode=OneWay}"/>
+            <Image x:Name="pieImage"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Aspect="AspectFit"
+                   Source="{Binding ImageUrl, Mode=OneWay}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+
+            <Label x:Name="price"
+                   FontSize="18"
+                   Grid.Row="2"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding Price, Mode=OneWay}"/>
+            <Label x:Name="inStock"
+                   FontSize="18"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding InStock, Mode=OneWay}"/>
+
+            <Label x:Name="description"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="CenterAndExpand"
+                   Text="{Binding Description, Mode=OneWay}"/>
+
+            <Button Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Text="ADD TO BASKET"
+                    Clicked="AddToBasket"
+                    TextColor="White"
+                    BackgroundColor="#22cfa7"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.SettingsView"
+             BackgroundImageSource="patternwide.png">
+    <ContentPage.Content>
+        <Grid RowDefinitions="100, 50, 50, 50, 50, 50, 50, 50, 50"
+              ColumnDefinitions="4*,6*">
+
+            <Label FontSize="Title"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">Settings</Label>
+
+            <!--Language-->
+            <Picker x:Name="languagePickerInCode"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="End"/>
+            <Label x:Name="selectedLanguage"
+                   Grid.Row="1"
+                   VerticalTextAlignment="Start"
+                   Text="{Binding Source={x:Reference Name=languagePickerInCode}, Path=SelectedItem}"/>
+
+            <!--Slider-->
+            <Label Grid.Row="2">Preferred monthly budget for pies</Label>
+            <Slider x:Name="pieBugdetSlider"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Minimum="0"
+                    Maximum="1000"/>
+            <Label x:Name="pieBudget"
+                   Grid.Row="3"
+                   VerticalTextAlignment="Center"
+                   Text="{Binding Source={x:Reference Name=pieBugdetSlider}, Path=Value, StringFormat='{0:C}'}"/>
+
+            <Label Grid.Row="4">Maximum pies you can order per month</Label>
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="4" Grid.Column="1"
+                         HorizontalOptions="CenterAndExpand">
+                <Button FontSize="18"
+                        Text="-"
+                        Clicked="MaxPieStepper"/>
+                <Button FontSize="18"
+                        Text="+"
+                        Clicked="MaxPieStepper"/>
+            </StackLayout>
+
+            <Label x:Name="pieStepper"
+                   Grid.Row="5"
+                   VerticalTextAlignment="Center"
+                   Text="{Binding MaxPies, StringFormat='You can order {0} pie(s) pr. month', Mode=TwoWay}"></Label>
+
+            <Button Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Text="SAVE SETTINGS"
+                    Clicked="Save"
+                    TextColor="White"
+                    BackgroundColor="#22cfa7"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+
+            <ActivityIndicator x:Name="activityIndicator"
+                               Grid.Row="9"
+                               Grid.Column="1"
+                               Color="#22cfa7"
+                               IsRunning="False"
+                               HorizontalOptions="End"
+                               VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

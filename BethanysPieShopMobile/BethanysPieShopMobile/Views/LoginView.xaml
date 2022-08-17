@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.LoginView"
+             BackgroundImageSource="patternwide.png">
+
+    <Grid Margin="5,20,0,5"
+          RowDefinitions="200, 100, 50, 50, *"
+          ColumnDefinitions="4*, 6*">
+        <Image Grid.ColumnSpan="2"
+               HeightRequest="200"
+               WidthRequest="200"
+               Source="bethanylogo.png"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand" />
+        <Label FontSize="Title"
+               Grid.Row="1"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand">Welcome to Bethany's Pie Shop</Label>
+
+        <!--User name input-->
+        <Label Grid.Row="2"
+               FontSize="18"
+               HorizontalOptions="StartAndExpand"
+               VerticalOptions="CenterAndExpand">User name</Label>
+        <Entry Grid.Row="2"
+               Grid.Column="1"
+               FontSize="18"
+               Placeholder="Enter your user name"
+               HorizontalOptions="StartAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <!--Password input-->
+        <Label Grid.Row="3"
+               FontSize="18"
+               HorizontalOptions="StartAndExpand"
+               VerticalOptions="CenterAndExpand">Password</Label>
+        <Entry Grid.Row="3"
+               Grid.Column="1"
+               FontSize="18"
+               IsPassword="True"
+               Placeholder="Enter your password"
+               HorizontalOptions="StartAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Button Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Text="LOGIN"
+                BackgroundColor="#22cfa7"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="StartAndExpand"/>
+    </Grid>
+</ContentPage>
