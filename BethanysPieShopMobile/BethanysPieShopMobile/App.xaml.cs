@@ -11,7 +11,7 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CarouselViewPage());
+            MainPage = new NavigationPage(new SettingsTableView());
 
             //var alreadyRegistered = false;
 

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.SettingsTableView"
+             BackgroundImageSource="patternwide.png">
+    <StackLayout>
+        <Label FontSize="Title"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">Settings</Label>
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Language">
+                    <ViewCell>
+                        <Picker Margin="15, 0" x:Name="languagePickerInCode"
+                                VerticalTextAlignment="End"/>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Pie Budget">
+                    <ViewCell>
+                        <Grid Margin="15,0"
+                              RowDefinitions="*,*"
+                              ColumnDefinitions="*,*">
+                            <Label HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="Monthly pie budget"/>
+                            <Slider x:Name="pieBugdetSlider"
+                                    Grid.Column="1"
+                                    Minimum="0"
+                                    Maximum="1000"/>
+                            <Label x:Name="pieBudget"
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="2"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalTextAlignment="Center"
+                                   Text="{Binding Source={x:Reference Name=pieBugdetSlider}, Path=Value, StringFormat='{0:C}'}"/>
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Margin="15, 0" 
+                                         Orientation="Horizontal">
+                                <Label x:Name="pieStepper" HorizontalOptions="StartAndExpand"
+                                       VerticalOptions="CenterAndExpand"
+                                       Text="{Binding MaxPies, StringFormat='Max Pies pr. month ({0:00})'}"/>
+                                <Button HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize="18"
+                                        Text="-"
+                                        Clicked="MaxPieStepper"/>
+                                <Button HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize="18"
+                                        Text="+"
+                                        Clicked="MaxPieStepper"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Button HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Text="SAVE SETTINGS"
+                TextColor="White"
+                BackgroundColor="#22cfa7"
+                Clicked="Save"/>
+
+        <ActivityIndicator x:Name="activityIndicator"
+                           Color="#22cfa7"
+                           IsRunning="False"
+                           HorizontalOptions="End"
+                           VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>
