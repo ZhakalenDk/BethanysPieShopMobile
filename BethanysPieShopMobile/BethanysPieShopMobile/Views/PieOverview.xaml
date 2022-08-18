@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopMobile.Views.PieOverview"
+             BackgroundImageSource="patternwide.png">
+    <StackLayout Margin="5,10">
+        <Label FontSize="Title"
+               HorizontalOptions="CenterAndExpand">Pie Overview</Label>
+        <ListView x:Name="piesView"
+                  CachingStrategy="RecycleElement"
+                  ItemSelected="SelectPieItem"
+                  IsPullToRefreshEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding PieName}"
+                               Detail="{Binding Price, StringFormat='{0:C}'}"
+                               ImageSource="{Binding ImageUrl}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

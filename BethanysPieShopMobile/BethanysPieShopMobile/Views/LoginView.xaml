@@ -50,6 +50,7 @@
                 BackgroundColor="#22cfa7"
                 TextColor="White"
                 HorizontalOptions="CenterAndExpand"
-                VerticalOptions="StartAndExpand"/>
+                VerticalOptions="StartAndExpand"
+                Clicked="SignIn"/>
     </Grid>
 </ContentPage>

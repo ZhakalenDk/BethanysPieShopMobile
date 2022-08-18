@@ -11,7 +11,14 @@ namespace BethanysPieShopMobile
         {
             InitializeComponent();
 
-            MainPage = new SettingsView();
+            MainPage = new NavigationPage(new CarouselViewPage());
+
+            //var alreadyRegistered = false;
+
+            //if (alreadyRegistered)
+            //    MainPage = new NavigationPage(new PieOverview());
+            //else
+            //    MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()

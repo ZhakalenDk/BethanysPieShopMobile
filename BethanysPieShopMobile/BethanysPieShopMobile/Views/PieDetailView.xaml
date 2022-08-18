@@ -4,52 +4,99 @@
              x:Class="BethanysPieShopMobile.Views.PieDetailView"
              BackgroundImageSource="patternwide.png">
     <ContentPage.Content>
-        <Grid Margin="5, 0"
-              RowDefinitions="50, 150, 50, 200, 50"
+        <Grid Margin="5, 10"
+              RowDefinitions="50, 200, 50, 50, 50, 200, *"
               ColumnDefinitions="4*, 6*">
-            <Label x:Name="pieName"
+            <Label
                    FontSize="Title"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Center"
-                   VerticalOptions="Center" 
-                   Text="{Binding PieName, Mode=OneWay}"/>
-            <Image x:Name="pieImage"
-                   Grid.Row="1"
+                   VerticalOptions="Center">Edit Pie</Label>
+
+            <Image Grid.Row="1"
                    Grid.ColumnSpan="2"
+                   HeightRequest="500"
+                   WidthRequest="500"
                    Aspect="AspectFit"
-                   Source="{Binding ImageUrl, Mode=OneWay}"
+                   Source="{Binding Path=Text, Source={x:Reference imagePath}, Mode=OneWay}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"/>
 
-            <Label x:Name="price"
-                   FontSize="18"
-                   Grid.Row="2"
-                   HorizontalOptions="StartAndExpand"
+            <!--Image-->
+            <Label Grid.Row="2"
+                   HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
-                   Text="{Binding Price, Mode=OneWay}"/>
-            <Label x:Name="inStock"
                    FontSize="18"
+                   Text="Image Path"/>
+            <Entry x:Name="imagePath"
                    Grid.Row="2"
                    Grid.Column="1"
-                   HorizontalOptions="EndAndExpand"
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding InStock, Mode=OneWay}"/>
-
-            <Label x:Name="description"
-                   Grid.Row="3"
-                   Grid.ColumnSpan="2"
                    HorizontalOptions="CenterAndExpand"
-                   Text="{Binding Description, Mode=OneWay}"/>
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="15"
+                   Text="{Binding Pie.ImageUrl, Mode=TwoWay}"/>
 
-            <Button Grid.Row="4"
+            <!--Name-->
+            <Label Grid.Row="3"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontSize="18">Pie name
+            </Label>
+            <Entry Grid.Row="3"
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   FontSize="18"
+                   Text="{Binding Pie.PieName, Mode=TwoWay}"/>
+
+            <!--Price-->
+            <StackLayout Grid.Row="4"
+                         Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <Label HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="18">Price</Label>
+                <Entry HorizontalOptions="EndAndExpand"
+                       FontSize="18"
+                       Text="{Binding Pie.Price, Mode=TwoWay}"/>
+            </StackLayout>
+
+            <!--Stock-->
+            <StackLayout Grid.Row="4"
+                         Grid.Column="1"
+                         Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <Label x:Name="inStock"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="18"
+                       Text="In Stock"/>
+                <Switch HorizontalOptions="EndAndExpand"
+                        IsToggled ="{Binding Pie.InStock, Mode=TwoWay}"/>
+            </StackLayout>
+
+            <Editor Grid.Row="5"
                     Grid.ColumnSpan="2"
-                    Text="ADD TO BASKET"
-                    Clicked="AddToBasket"
+                    HeightRequest="200"
+                    VerticalOptions="CenterAndExpand"
+                    IsSpellCheckEnabled="True"
+                    IsTextPredictionEnabled="True"
+                    Text="{Binding Pie.Description, Mode=TwoWay}">
+                <Editor.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                iOS="#32c3ef"
+                                Android="#83d5c2"/>
+                </Editor.BackgroundColor>
+            </Editor>
+
+            <Button Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    Text="Save"
                     TextColor="White"
                     BackgroundColor="#22cfa7"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="EndAndExpand"/>
+                    Clicked="AddToBasket"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
