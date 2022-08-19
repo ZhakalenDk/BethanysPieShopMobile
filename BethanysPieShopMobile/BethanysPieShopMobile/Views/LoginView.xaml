@@ -7,6 +7,7 @@
     <Grid Margin="5,20,0,5"
           RowDefinitions="200, 100, 50, 50, *"
           ColumnDefinitions="4*, 6*">
+
         <Image Grid.ColumnSpan="2"
                HeightRequest="200"
                WidthRequest="200"
@@ -17,7 +18,8 @@
                Grid.Row="1"
                Grid.ColumnSpan="2"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand">Welcome to Bethany's Pie Shop</Label>
+               VerticalOptions="CenterAndExpand"
+               TextColor="{StaticResource BethanysGreenColor}">Welcome to Bethany's Pie Shop</Label>
 
         <!--User name input-->
         <Label Grid.Row="2"
@@ -46,11 +48,10 @@
 
         <Button Grid.Row="4"
                 Grid.ColumnSpan="2"
-                Text="LOGIN"
-                BackgroundColor="#22cfa7"
-                TextColor="White"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="StartAndExpand"
+                Style="{StaticResource RegularButtonStyle}"
+                Text="LOGIN"
                 Clicked="SignIn"/>
     </Grid>
 </ContentPage>

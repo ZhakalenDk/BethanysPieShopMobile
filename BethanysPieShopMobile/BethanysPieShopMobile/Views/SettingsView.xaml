@@ -32,7 +32,7 @@
             <Label x:Name="pieBudget"
                    Grid.Row="3"
                    VerticalTextAlignment="Center"
-                   Text="{Binding Source={x:Reference Name=pieBugdetSlider}, Path=Value, StringFormat='{0:C}'}"/>
+                   Text="{Binding Source={x:Reference Name=pieBugdetSlider}, Path=Value, Converter={StaticResource LocalCurrencyConverter}}"/>
 
             <Label Grid.Row="4">Maximum pies you can order per month</Label>
             <StackLayout Orientation="Horizontal"

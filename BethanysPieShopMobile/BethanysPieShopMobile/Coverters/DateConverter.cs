@@ -15,7 +15,7 @@ namespace BethanysPieShopMobile.Coverters
                 return (( DateTime )value).ToLongDateString();
             }
 
-            return "Error";
+            return new DateTime();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

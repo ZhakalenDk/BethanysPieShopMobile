@@ -2,10 +2,23 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.App"
-             xmlns:converters="clr-namespace:BethanysPieShopMobile.Coverters">
+             xmlns:converters="clr-namespace:BethanysPieShopMobile.Coverters"
+             xmlns:styles="clr-namespace:BethanysPieShopMobile.Styles">
     <Application.Resources>
         <converters:CurrencyConverter x:Key="LocalCurrencyConverter"/>
         <converters:DateConverter x:Key="LocalDateConverter"/>
         <converters:TimeConverter x:Key="LocalTimeConverter"/>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:ColorDictionary/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="RegularButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BethanysGreenColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

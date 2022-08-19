@@ -39,7 +39,7 @@ namespace BethanysPieShopMobile.Views
 
         private async void AddToBasket(object sender, EventArgs e)
         {
-            await DisplayAlert("Success", $"Pie ({Pie.PieName}) was saved!", "OK");
+            await DisplayAlert("Success", $"Pie ({Pie.PieName} - {Pie.Price}) was saved!", "OK");
         }
     }
 }
