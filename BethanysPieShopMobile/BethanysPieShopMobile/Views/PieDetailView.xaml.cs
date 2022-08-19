@@ -19,7 +19,7 @@ namespace BethanysPieShopMobile.Views
 
             Pie = pie;
 
-            BindingContext = this;
+            BindingContext = Pie;
         }
 
         public Pie Pie { get; set; }

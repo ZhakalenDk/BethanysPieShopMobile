@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopMobile.Views.PieDetailView"
+             xmlns:models ="clr-namespace:BethanysPieShopMobile.Models"
              BackgroundImageSource="patternwide.png">
     <ContentPage.Content>
         <Grid Margin="5, 10"
               RowDefinitions="50, 200, 50, 50, 50, 200, *"
-              ColumnDefinitions="4*, 6*">
+              ColumnDefinitions="4*, 6*"
+              x:DataType="models:Pie">
             <Label
                    FontSize="Title"
                    Grid.Row="0"
@@ -35,7 +37,7 @@
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    FontSize="15"
-                   Text="{Binding Pie.ImageUrl, Mode=TwoWay}"/>
+                   Text="{Binding ImageUrl, Mode=TwoWay}"/>
 
             <!--Name-->
             <Label Grid.Row="3"
@@ -47,7 +49,7 @@
                    Grid.Column="1"
                    VerticalOptions="Center"
                    FontSize="18"
-                   Text="{Binding Pie.PieName, Mode=TwoWay}"/>
+                   Text="{Binding PieName, Mode=TwoWay}"/>
 
             <!--Price-->
             <StackLayout Grid.Row="4"
@@ -58,7 +60,7 @@
                        FontSize="18">Price</Label>
                 <Entry HorizontalOptions="EndAndExpand"
                        FontSize="18"
-                       Text="{Binding Pie.Price, Mode=TwoWay}"/>
+                       Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}, Mode=TwoWay}"/>
             </StackLayout>
 
             <!--Stock-->
@@ -72,7 +74,7 @@
                        FontSize="18"
                        Text="In Stock"/>
                 <Switch HorizontalOptions="EndAndExpand"
-                        IsToggled ="{Binding Pie.InStock, Mode=TwoWay}"/>
+                        IsToggled ="{Binding InStock, Mode=TwoWay}"/>
             </StackLayout>
 
             <Editor Grid.Row="5"
@@ -81,7 +83,7 @@
                     VerticalOptions="CenterAndExpand"
                     IsSpellCheckEnabled="True"
                     IsTextPredictionEnabled="True"
-                    Text="{Binding Pie.Description, Mode=TwoWay}">
+                    Text="{Binding Description, Mode=TwoWay}">
                 <Editor.BackgroundColor>
                     <OnPlatform x:TypeArguments="Color"
                                 iOS="#32c3ef"

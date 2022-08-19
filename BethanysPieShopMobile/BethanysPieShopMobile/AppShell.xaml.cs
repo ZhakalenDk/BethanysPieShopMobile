@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BethanysPieShopMobile.Views
+namespace BethanysPieShopMobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginView : ContentPage
+    public partial class AppShell : Shell
     {
-        public LoginView()
+        public AppShell()
         {
             InitializeComponent();
-        }
-
-        private void SignIn(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new AppShell();
         }
     }
 }

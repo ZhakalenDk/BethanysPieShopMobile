@@ -32,7 +32,7 @@
                                    Grid.ColumnSpan="2"
                                    HorizontalOptions="EndAndExpand"
                                    VerticalTextAlignment="Center"
-                                   Text="{Binding Source={x:Reference Name=pieBugdetSlider}, Path=Value, StringFormat='{0:C}'}"/>
+                                   Text="{Binding Source={x:Reference Name=pieBugdetSlider}, Path=Value, Converter={StaticResource LocalCurrencyConverter}}"/>
                         </Grid>
                     </ViewCell>
                     <ViewCell>
