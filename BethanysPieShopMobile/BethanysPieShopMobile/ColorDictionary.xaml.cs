@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BethanysPieShopMobile.Styles
+namespace BethanysPieShopMobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ColorDictionary : ResourceDictionary
