@@ -19,6 +19,27 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource BethanysGreenColor}"/>
                 <Setter Property="TextColor" Value="White"/>
             </Style>
+
+            <!--Label Styles-->
+            <Style x:Key="BaseLabelStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="DarkGray"/>
+            </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <!--Font Styles-->
+            <Style x:Key="smallLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+            <Style x:Key="mediumLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style x:Key="largeLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
